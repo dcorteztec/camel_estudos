@@ -46,6 +46,6 @@ public class RestAggregatorRoute extends RouteBuilder {
                 .end()
                 .removeHeaders("CamelHttp*")
                 .setHeader(Exchange.HTTP_METHOD, constant("GET"))
-                .toD("http://{{books.url}}/books/${header.id}");
+                .toD("http://{{books.url}}/books/author/${header.id}");
     }
 }
