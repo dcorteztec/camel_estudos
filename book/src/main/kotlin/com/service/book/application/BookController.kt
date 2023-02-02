@@ -17,7 +17,12 @@ class BookController(
         return service.listBooks()
     }
 
-    @GetMapping("/{author}")
+    @GetMapping("/{id}")
+    fun getBookById(@PathVariable id: String): Book? {
+        return service.getBookById(id)
+    }
+
+    @GetMapping("/author/{author}")
     fun listBooksByAuthor(@PathVariable author: String): List<Book>? {
         return service.listBookByAuthor(author)
     }

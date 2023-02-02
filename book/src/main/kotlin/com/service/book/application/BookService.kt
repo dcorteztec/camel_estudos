@@ -24,4 +24,8 @@ class BookService {
         return this.listBooks().filter { it.authorId == author }
     }
 
+    fun getBookById(id: String): Book? {
+        return this.listBooks().find { it.id == id }
+    }
+
 }
